@@ -32,7 +32,12 @@ function calc_combinacao(h, j) {
     let n = Number(document.getElementById(h).value)
     let p = Number(document.getElementById(j).value)
     
-    let final = math.combinations(n, p);
+    if(n < p) {
+        resultado.innerHTML = '"n" não pode ser menor que "p"'
+    }
+    else {
+        let final = math.combinations(n, p);
 
-    resultado.innerHTML = final;
+        resultado.innerHTML = final;
+    }  
 }
