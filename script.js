@@ -1,29 +1,38 @@
-let butao = document.getElementById("button")
 let resultado = document.getElementById("resultado")
 
-butao.addEventListener("click", function() {
-    let n = Number(document.getElementById("elementos").value)
-    let p = Number(document.getElementById("posicoes").value)
+function calc_permutacao(h) {
+    // transforma a variável em um número para ser possível fazer a conta
+    let n = Number(document.getElementById(h).value)
     
-    if (n < 0) {
-        resultado.innerHTML = "Número negativo, sem fatorial.";
-    } else if (n == 0 || n == 1) {
-        resultado.innerHTML = 1;
-    } else {
-        // contador começa em 2 pq um fatorial não pode começar em 1
-        let contador = 2;
-        let fatorial = 1;
-        
-        // contador começa em 2, e vai sendo adicionado 1 unidade a cada loop do while, até chegar no valor de "n" que ele vai interromper o loop
-        while (contador <= n) {
-            // fatorial começa em 1, multiplica por contador(2), e fica nesse looping até terminar o while
-            fatorial = fatorial * contador;
-
-            // ex "n=4" -> conta usando fatorial e contador: 1 = 1x2(da 2) -> 2 = 2x3(da 6) -> 6 = 6x4(da 24) e assim sugestivamente até chegar no valor de n, resultando no fatorial.
-            contador++;
-        }
-
-        resultado.innerHTML = fatorial;
+    if(n < 0) {
+        resultado.innerHTML = '"n" não pode ser menor que 0'
     }
-})
+    else {
+        let perm = math.factorial(n);
 
+        resultado.innerHTML = perm;
+    }
+}
+
+function calc_arranjo(h, j) {
+    let n = Number(document.getElementById(h).value)
+    let p = Number(document.getElementById(j).value)
+    
+    if(n < p) {
+        resultado.innerHTML = '"n" não pode ser menor que "p"'
+    }
+    else {
+        let final = math.factorial(n) / math.factorial(n - p);
+
+        resultado.innerHTML = final;
+    }  
+}
+
+function calc_combinacao(h, j) {
+    let n = Number(document.getElementById(h).value)
+    let p = Number(document.getElementById(j).value)
+    
+    let final = math.combinations(n, p);
+
+    resultado.innerHTML = final;
+}

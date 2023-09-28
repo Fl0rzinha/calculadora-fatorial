@@ -1,4 +1,4 @@
-function fatorial(m, imprimir) {
+function calc_permutacao(m, imprimir) {
     let n = Number(document.getElementById(m).value)
     let resultado = document.getElementById(imprimir)
 

@@ -46,6 +46,8 @@ label input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 7px;
+    margin-top: 10px;
 }
 
 .confirmacao button {
@@ -75,10 +77,10 @@ label input {
     align-items: center;
     padding-left: 3px;
     padding-right: 3px;
+    font-size: 13px;
 }
 
 p {
     line-height: 25px;
     text-align: center;
-    margin-top: 50px;
 }

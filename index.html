@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de permutação</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.5.3/math.js"></script>
 </head>
 <body>
     <h1>Calculadora de permutação simples</h1>
     <form>
         <div class="perguntas">
-            <label>Elementos(n) :<input type="text" name="num1" id="elementos"></label>
-            <label>Posições(p) :<input type="text" name="num2" id="posicoes"></label>
+            <label>Elementos(n) :<input type="number" name="num1" id="elementos"></label>
+            <label>Posições(p) :<input type="number" name="num2" id="posicoes"></label>
         </div>
 
         <div class="confirmacao">
-            <button type="button" id="button" onclick="fatorial('elementos' ,'resultado')">Calcular</button>
+            <button type="button" id="button" onclick="calc_permutacao('elementos')">Permutação</button>
+
+            <button type="button" id="button" onclick="calc_arranjo('elementos', 'posicoes')">Arranjo</button>
+
+            <button type="button" id="button" onclick="calc_combinacao('elementos','posicoes')">Combinação</button>
             <a href="criadores.html">Criadores</a>
 
             <p id="resultado"></p>
         </div>
     </form>
 
-    <script src="fatorial.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
